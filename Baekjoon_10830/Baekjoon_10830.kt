@@ -9,7 +9,7 @@ fun main() {
 
 private fun solve() {
     input()
-    val result = pow(b)
+    val result = process(b)
     output(result)
 }
 
@@ -23,10 +23,10 @@ private fun input() {
     }
 }
 
-private fun pow(exponent: Long): Array<IntArray> {
+private fun process(exponent: Long): Array<IntArray> {
     if(exponent == 1L) return matrix
 
-    val temp = pow(exponent / 2)
+    val temp = process(exponent / 2)
     var mul = multiply(temp, temp)
 
     if(exponent % 2 == 1L) {
